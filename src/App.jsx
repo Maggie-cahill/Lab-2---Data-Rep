@@ -25,7 +25,7 @@ function App() { {/*only live "page" which combines all the components into one 
           </Container>
         </Navbar>
 
-        <Routes>
+        <Routes> {/* route that defines the different paths and their corresponding components */} 
           <Route path="/" element={<Content/>} /> {/* when the "home" path is accessed, display the Content component - acts as a dynamic way of "navigating" as site even though we are technically staying on the same page */}
           <Route path="/read" element={<Header />} /> {/* when the "read" path is accessed, display the Header component  */}
           <Route path="/create" element={<Footer />} /> {/* when the "create" path is accessed, display the Footer component  */}
