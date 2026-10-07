@@ -9,6 +9,9 @@ import './App.css'; {/*the css file*/}
 import {Nav, Navbar, Container} from 'react-bootstrap'; {/*import components/elements from the react bootstap (bootstrap makes it easier because it will have preset designs for components) */}
 import {BrowserRouter , Routes, Route} from 'react-router-dom'; {/*import the router functionality to allow us to change the url path */}
 
+import Read from './Components/Read'; 
+import Create from './Components/Create';
+
 function App() { {/*only live "page" which combines all the components into one functioning interface */}
 
   return (
@@ -19,16 +22,20 @@ function App() { {/*only live "page" which combines all the components into one 
             <Navbar.Brand href="#home">Navbar</Navbar.Brand> {/* bootsrap element which represents the corner header where you typically put the logo or site name */}
             <Nav className="me-auto"> {/*navbar element to input list items or links */}
               <Nav.Link href="/">Home</Nav.Link> {/*navigate to path outlined in the href when the user clicks on this link */}
+              <Nav.Link href="/header">Header</Nav.Link>
+              <Nav.Link href="/footer">Footer</Nav.Link>
               <Nav.Link href="/read">Read</Nav.Link>
               <Nav.Link href="/create">Create</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
 
-        <Routes>
+        <Routes> {/* route that defines the different paths and their corresponding components */}
           <Route path="/" element={<Content/>} /> {/* when this path is accessed, display the Content component - acts as a dynamic way of "navigating" as site even though we are technically staying on the same page */}
-          <Route path="/read" element={<Header />} />
-          <Route path="/create" element={<Footer />} />
+          <Route path="/header" element={<Header />} />
+          <Route path="/footer" element={<Footer />} />
+          <Route path="/read" element={<Read/>} />
+          <Route path="/create" element={<Create/>} />
         </Routes>
 
       </BrowserRouter>
