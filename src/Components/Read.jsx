@@ -4,7 +4,7 @@ import Movies from './Movies';
 
 
 export default function Read() {
-    const movies = [
+    const movies = [ // array to store and hold all movie objects
         {
             "Title": "Avengers Infinity War",
             "Year": "2018",
@@ -28,10 +28,10 @@ export default function Read() {
         }
     ];
 
-    return (
+    return ( // return what is visible on the page
         <div>
-        <h3>Hello from the Read component!</h3>
-        <Movies mymovies={movies}/>
+        <h3>Hello from the Read component!</h3> // embedded welcome page
+        <Movies mymovies={movies}/> // incorporate movies component AND pass movies array to it so it can display this info
         
         </div>
 
